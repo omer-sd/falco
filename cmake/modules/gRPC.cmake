@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2019 The Falco Authors.
+# Copyright (C) 2020 The Falco Authors.
 #
 # Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
 # the License. You may obtain a copy of the License at
@@ -40,6 +40,15 @@ if(NOT USE_BUNDLED_DEPS)
     message(STATUS "Found protobuf: compiler: ${PROTOC}, include: ${PROTOBUF_INCLUDE}, lib: ${PROTOBUF_LIB}")
   else()
     message(FATAL_ERROR "Couldn't find system protobuf")
+  endif()
+
+  # gpr
+  find_library(GPR_LIB NAMES gpr)
+
+  if(GPR_LIB)
+    message(STATUS "Found gpr lib: ${GPR_LIB}")
+  else()
+    message(FATAL_ERROR "Couldn't find system gpr")
   endif()
 
   # gRPC todo(fntlnz, leodido): check that gRPC version is greater or equal than 1.8.0

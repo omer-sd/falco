@@ -11,6 +11,7 @@
       - [Rule type](#rule-type)
   - [Coding Guidelines](#coding-guidelines)
     - [C++](#c)
+    - [Unit testing](/tests/README.md)
   - [Developer Certificate Of Origin](#developer-certificate-of-origin)
 
 ## Code of Conduct
@@ -80,7 +81,7 @@ Some examples:
 
 ### Slack
 
-Other discussion, and **support requests** should go through the `#falco` channel in the open source slack, please join [here](https://slack.sysdig.com).
+Other discussion, and **support requests** should go through the `#falco` channel in the Kubernetes slack, please join [here](https://slack.k8s.io/).
 
 ## Pull Requests
 

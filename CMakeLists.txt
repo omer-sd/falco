@@ -71,9 +71,9 @@ set(CMAKE_CXX_FLAGS_RELEASE "-O3 -fno-strict-aliasing -DNDEBUG")
 include(GetFalcoVersion)
 
 set(PACKAGE_NAME "falco")
-set(PROBE_NAME "falco-probe")
+set(PROBE_NAME "falco")
 set(PROBE_DEVICE_NAME "falco")
-set(DRIVER_LOOKUP_URL "https://s3.amazonaws.com/download.draios.com")
+set(DRIVERS_REPO "https://dl.bintray.com/falcosecurity/driver")
 if(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
   set(CMAKE_INSTALL_PREFIX
       /usr
@@ -214,6 +214,9 @@ ExternalProject_Add(
   BUILD_IN_SOURCE 1
   BUILD_COMMAND ${CMD_MAKE} COPT="-DNO_FILES" WITH_CPP=1
   INSTALL_COMMAND ${CMD_MAKE} COPT="-DNO_FILES" install-lib install-headers PREFIX=${CIVETWEB_SRC}/install "WITH_CPP=1")
+
+#string-view-lite
+include(DownloadStringViewLite)
 
 # gRPC
 include(gRPC)

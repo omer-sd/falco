@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2019 The Falco Authors.
+# Copyright (C) 2020 The Falco Authors.
 #
 # Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
 # the License. You may obtain a copy of the License at
@@ -16,7 +16,7 @@ set(SYSDIG_CMAKE_WORKING_DIR "${CMAKE_BINARY_DIR}/sysdig-repo")
 
 # this needs to be here at the top
 if(USE_BUNDLED_DEPS)
-  # explicitly force this dependency to use the system OpenSSL
+  # explicitly force this dependency to use the bundled OpenSSL
   set(USE_BUNDLED_OPENSSL ON)
 endif()
 
@@ -26,8 +26,8 @@ file(MAKE_DIRECTORY ${SYSDIG_CMAKE_WORKING_DIR})
 # To update sysdig version for the next release, change the default below
 # In case you want to test against another sysdig version just pass the variable - ie., `cmake -DSYSDIG_VERSION=dev ..`
 if(NOT SYSDIG_VERSION)
-  set(SYSDIG_VERSION "be1ea2d9482d0e6e2cb14a0fd7e08cbecf517f94")
-  set(SYSDIG_CHECKSUM "SHA256=1c69363e4c36cdaeed413c2ef557af53bfc4bf1109fbcb6d6e18dc40fe6ddec8")
+  set(SYSDIG_VERSION "96bd9bc560f67742738eb7255aeb4d03046b8045")
+  set(SYSDIG_CHECKSUM "SHA256=766e8952a36a4198fd976b9d848523e6abe4336612188e4fc911e217d8e8a00d")
 endif()
 set(PROBE_VERSION "${SYSDIG_VERSION}")
 
